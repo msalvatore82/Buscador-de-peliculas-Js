@@ -1,0 +1,77 @@
+body {
+        margin: 10px;
+}
+
+.peliculasdiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  
+
+}
+
+.card {
+    margin: 15px;
+    display: flex;
+    width: 35vw;
+    height: 80vw;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+
+.card img {
+   padding: 5px;
+   
+}
+
+.card {
+    --border-width: 8px;
+    color: rgb(90, 90, 90);
+    border-radius: var(--border-width);
+  }
+.card::after {
+    position: absolute;
+    content: "";
+    top: calc(-1 * var(--border-width));
+    left: calc(-1 * var(--border-width));
+    z-index: -1;
+    width: calc(100% + var(--border-width) * 2);
+    height: calc(100% + var(--border-width) * 2);
+    background: linear-gradient(60deg, #5f86f2, #a65ff2, #f25fd0, #f25f61, #f2cb5f, #abf25f, #5ff281, #5ff2f0);
+    background-size: 300% 300%;
+    background-position: 0 50%;
+    border-radius: calc(2 * var(--border-width));
+    animation: moveGradient 4s alternate infinite;
+  }
+  
+  @keyframes moveGradient {
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+h1 {
+    font-size: 55px;
+    text-align: center;
+}
+h2{
+    text-align: center;
+       text-shadow: black 6px 6px 8px;
+}
+
+h3 {
+      }
+
+.form-control{
+    margin: 10px;
+    }
+    input {
+        margin: 10px;
+        width: 100%;
+    }
+
+    input:hover {
+        box-shadow: 10px 10px 61px 3px rgba(255,255,255,0.75) inset;
+-webkit-box-shadow: 10px 10px 61px 3px rgba(255,255,255,0.75) inset;
+-moz-box-shadow: 10px 10px 61px 3px rgba(255,255,255,0.75) inset;
+    }
