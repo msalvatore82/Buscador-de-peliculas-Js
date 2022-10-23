@@ -1,8 +1,8 @@
 const buscarPeli = document.getElementById('buscar')
 const peliculasDiv = document.getElementById("peliculasDiv");
 const form = document.getElementById("form");
-const IdActores = []
-const ApiUrlImg = [] 
+let aux = [];
+// console.log(aux);
 
 
 const buscarPelicula = async (e) => {
@@ -15,7 +15,12 @@ const buscarPelicula = async (e) => {
     const resultadoId = await axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=764cf5d2372d199f7556957e1a47b1cb&language=en-US`);
     const idGenerosApi = resultadoId.data.genres; // aca tengo los generos
     // console.log(idGenerosApi);
-    mostrarPeliculas(peliculas, idGenerosApi );
+    mostrarPeliculas(peliculas, idGenerosApi);
+    // const casting = await axios.get (`https://api.themoviedb.org/3/movie/${aux}/credits?api_key=764cf5d2372d199f7556957e1a47b1cb&language=en-US`)
+    // console.log(casting)
+    
+    // console.log(casting.data.cast[0].character)
+    // mostrarPeliculas(casting);
 
    
  
@@ -25,23 +30,24 @@ const buscarPelicula = async (e) => {
   }
 };
 
-const mostrarPeliculas = (peliculas, idGenerosApi) => {
+
+const mostrarPeliculas = (peliculas, idGenerosApi, casting) => {
   peliculasDiv.innerHTML = "";
   peliculas.forEach((pelicula) => {
-    const idGeneroPeli = pelicula.genre_ids // aca tengo los generos de las peliculas una por una 
+    const idGeneroPeli = pelicula.genre_ids // aca tengo los generos de las peliculas una por 
     const generosApi = idGenerosApi 
-
     let resultado = generosApi.filter( item => idGeneroPeli.includes(item.id));
-
+    const idPeli = pelicula.id 
+    // console.log(idPeli);
+    aux.push(idPeli)
     const genero = [ ]
       for(let item of resultado){
         genero.push(' ' + item.name);
-
+            
 }
     // console.log(generosApi);
     // console.log(idGeneroPeli);
     // console.log(genero);
-    
       peliculasDiv.innerHTML += 
     ` 
     <div class="peliculasDiv">
@@ -66,7 +72,7 @@ const mostrarPeliculas = (peliculas, idGenerosApi) => {
         `;
         
        
-    
+   
       });
 
 };
