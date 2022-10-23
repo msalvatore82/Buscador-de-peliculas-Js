@@ -33,11 +33,11 @@ const mostrarPeliculas = (peliculas, idGenerosApi) => {
 
     let resultado = generosApi.filter( item => idGeneroPeli.includes(item.id));
 
-    const genero = []
+    const genero = [ ]
       for(let item of resultado){
-        genero.push(item.name);
-}
+        genero.push(' ' + item.name);
 
+}
     // console.log(generosApi);
     // console.log(idGeneroPeli);
     // console.log(genero);
