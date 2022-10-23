@@ -1,5 +1,9 @@
+
+
 body {
-        margin: 10px;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+  margin: 10px;
 }
 
 .peliculasdiv{
@@ -53,22 +57,22 @@ body {
 h1 {
     font-size: 55px;
     text-align: center;
+    color: aliceblue;
 }
 h2{
     text-align: center;
        text-shadow: black 6px 6px 8px;
 }
 
-h3 {
-      }
-
 .form-control{
     margin: 10px;
+   
+
     }
     input {
         margin: 10px;
         width: 100%;
-    }
+           }
 
     input:hover {
         box-shadow: 10px 10px 61px 3px rgba(255,255,255,0.75) inset;
